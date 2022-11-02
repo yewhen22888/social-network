@@ -1,12 +1,12 @@
-.app-wrarer {
+.app-wraper {
   margin: 0 auto;
   display: grid;
   grid-template-areas:
     "h h"
     "n c";
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr 14fr;
 
   ;
 
@@ -25,6 +25,7 @@
 }
 
 .nav {
+  width: 100px;
   grid-area: n;
   background-color: aqua;
 }
