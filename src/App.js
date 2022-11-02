@@ -22,16 +22,15 @@ const App = () => {
         <div>
           <a>Option</a>
         </div>
-        <div>
-
-        </div>
       </nav>
       <div className='content'>
         <img src='https://wallpaperaccess.com/full/246822.jpg' />
+        <div>
+          <a>Не розтраюйся із за ошибок на початках це норм</a>
+        </div>
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
