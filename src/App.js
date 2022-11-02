@@ -25,9 +25,6 @@ const App = () => {
       </nav>
       <div className='content'>
         <img src='https://wallpaperaccess.com/full/246822.jpg' />
-        <div>
-          <a>Не розтраюйся із за ошибок на початках це норм</a>
-        </div>
       </div>
     </div>
   );
