@@ -22,9 +22,12 @@ const App = () => {
         <div>
           <a>Option</a>
         </div>
+        <div>
+
+        </div>
       </nav>
       <div className='content'>
-        <img src='https://wallpaperaccess.com/full/246822.jpg'/>
+        <img src='https://wallpaperaccess.com/full/246822.jpg' />
       </div>
     </div>
   )
