@@ -1,12 +1,12 @@
 .app-wraper {
-  margin: 0 auto;
+margin: 0 auto  ;
   display: grid;
   grid-template-areas:
     "h h"
     "n c";
 
-  grid-template-rows: 100px 1fr;
-  grid-template-columns: 1fr 14fr;
+  grid-template-rows: 150px 1fr;
+  grid-template-columns: 1fr 10fr ;
 
   ;
 
@@ -21,11 +21,11 @@
 }
 
 .header img {
-  width: 100px;
+  width: 300px;
+  height: 150px;
 }
 
 .nav {
-  width: 100px;
   grid-area: n;
   background-color: aqua;
 }
@@ -36,5 +36,6 @@
 }
 
 .content img {
-  width: 500px;
+  /* width: 1300px; */
+  height: 300px;
 }
