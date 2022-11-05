@@ -1,3 +1,6 @@
+
+
+
 .app-wraper {
 margin: 0 auto  ;
   display: grid;
@@ -7,35 +10,9 @@ margin: 0 auto  ;
 
   grid-template-rows: 150px 1fr;
   grid-template-columns: 1fr 10fr ;
-
-  ;
-
+  }
 
 
 
-}
 
-.header {
-  grid-area: h;
-  background-color: darkolivegreen;
-}
 
-.header img {
-  width: 300px;
-  height: 150px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: aqua;
-}
-
-.content {
-  grid-area: c;
-  background-color: chocolate;
-}
-
-.content img {
-  /* width: 1300px; */
-  height: 300px;
-}
