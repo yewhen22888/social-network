@@ -3,9 +3,16 @@ import s from'./Header.module.css'
 
 const Header = () => {
 return (
+    <div>
     <header className={s.header}>
-        <img src='https://graphicriver.img.customer.envatousercontent.com/files/383753376/Letter+A+Logo+-+Anglex_1.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=1322843b6a4dc44c34d61c195d61ee3e' />
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png' />
     </header>
+    <div>
+        <img src='https://www.bmw.ru/content/dam/bmw/marketRU/bmw_ru/topics/fascination-bmw/bmw-m-logo-and-colors/bmw-m-logo-and-colors.jpg' /
+    </div>
+    </div>
 )
 }
+
+
 export default Header;
