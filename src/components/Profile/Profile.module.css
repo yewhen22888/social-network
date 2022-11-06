@@ -1,11 +1,9 @@
 .content {
   grid-area: c;
+  background-color: chocolate;
 }
 
-.content img {
+.image img {
   height: 400px;
 }
 
-.background {
-  background-color: chocolate;
-}
