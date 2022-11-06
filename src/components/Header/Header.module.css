@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-area: h;
+  background-color: chartreuse;
+  grid-template-areas:
+    "l1 l2";
+    grid-template-columns: 1fr 8fr ;
+}
+
+.logo {
+  grid-area: l1;
+}
+
+.logo2 {
+  grid-area: l2;
+}
+
+.logo img {
+  height: 100px;
+
+}
+
+.logo2 {
+  margin: 0 auto;
+ width: 1000px; 
+  height: 100px;
+
+}

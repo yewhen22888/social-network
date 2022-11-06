@@ -4,10 +4,8 @@
 }
 
 .content img {
-  /* width: 1300px; */
-  height: 300px;
+  margin: 0 auto;
+  /* width: 1000px; */
+  height: 400px;
 }
 
-.item {
-color: darkmagenta;
-}
