@@ -1,18 +1,10 @@
-
-
-
 .app-wraper {
-margin: 0 auto  ;
+  margin: 0 auto;
   display: grid;
   grid-template-areas:
     "h h"
     "n c";
 
   grid-template-rows: 150px 1fr;
-  grid-template-columns: 1fr 10fr ;
-  }
-
-
-
-
-
+  grid-template-columns: 1fr 10fr;
+}

@@ -1,8 +1,11 @@
-.header {
-    grid-area: h;
-    background-color: darkturquoise;
-  }
-  
-  .header img {
-        height: 150px;
-  }
+.Header {
+  grid-area: h;
+  background-color: chartreuse;
+}
+
+
+
+.logo img {
+  height: 150px;
+
+}
