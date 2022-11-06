@@ -1,11 +1,11 @@
 .content {
   grid-area: c;
-  background-color: chocolate;
 }
 
 .content img {
-  margin: 0 auto;
-  /* width: 1000px; */
   height: 400px;
 }
 
+.background {
+  background-color: chocolate;
+}
