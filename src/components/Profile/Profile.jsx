@@ -9,7 +9,7 @@ const Profile = (props) => {
       </div>
       <div>ava + diskription</div>
       <div>
-        <Posts postname2={props.postname}/>
+        <Posts postname={props.postname}/>
       </div>
 
     </div>
