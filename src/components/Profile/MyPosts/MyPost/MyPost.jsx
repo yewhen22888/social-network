@@ -7,7 +7,8 @@ const Post = (props) => {
         <img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/BMW_logo_%28gray%29.svg' />
         {props.message}
       </div>
-    </div>
+             <button>like</button> {props.LikeAmound}
+            </div>
   );
 };
 
