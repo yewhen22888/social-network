@@ -4,19 +4,19 @@ const NavBar = () => {
     return(
         <nav className={s.Nav}>
         <div className={s.item} >
-          <a>Profile</a>
+          <a href='/Profile'>Profile</a>
         </div>
         <div className={s.item}>
-          <a>Music</a>
+          <a href='/Dialogs'>Message</a>
         </div>
         <div className={s.item}>
-          <a>Video</a>
+          <a href='Video'>Video</a>
         </div>
         <div className={s.item}>
-          <a>Message</a>
+          <a href='/Music'>Music</a>
         </div>
         <div className={s.item} >
-          <a>Option</a>
+          <a href='/Option'>Option</a>
         </div>
       </nav>
     )
