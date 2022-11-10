@@ -14,9 +14,9 @@ const App = () => {
       <Header />
       <NavBar />
       <div className='app-wraper-dialogs'>
-        {/* <Dialogs />*/} <Profile postname={post} />
+        { <Dialogs />/* <Profile postname={post} /> */}
       </div>
-      
+      {/* <Profile postname={post} /> */}
     </div>
   );
 };
