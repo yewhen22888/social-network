@@ -1,12 +1,15 @@
 .Nav {
   grid-area: n;
   background-color: darkgreen;
+  padding:25px;
 }
 
-.item {
+.item a{
+  
   color: black;
+text-decoration: none ;
 }
 
-/* .active {
-  color: forestgreen;
-} */
+.item a.active {
+  color: rgba(0, 238, 255, 0.694);
+}
