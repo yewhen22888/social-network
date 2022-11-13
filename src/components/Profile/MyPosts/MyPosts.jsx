@@ -4,7 +4,7 @@ import s from './MyPosts.module.css'
 
 const Posts = (props) => {
   return (
-    <div>
+    <div className={s.postBar}>
       <div>
         My post
       </div>

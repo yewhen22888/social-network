@@ -1,13 +1,11 @@
 import Posts from './MyPosts/MyPosts';
 import s from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
     return (
     <div className>
-      <div className={s.images}>
-        <img src='https://static.autox.com/uploads/2021/01/BMW-3-Series-Gran-Limousine-launched-in-India-500x261.jpg  ' />
-      </div>
-      <div>ava + diskription</div>
+      <ProfileInfo/>
       <div>
         <Posts postname={props.postname}/>
       </div>

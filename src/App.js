@@ -20,7 +20,7 @@ const App = () => {
         <div className='app-wraper-dialogs'>
           <Routes>
             <Route path="/Profile" element={<Profile postname={post}/>} />
-            <Route path="/Dialogs" element={<Dialogs />} />
+            <Route path="/Dialogs/*" element={<Dialogs />} />
             <Route path='/Music' element={<Music/>}/>
             <Route path='/Video' element={<Video/>}/>
             <Route path='/Option' element={<Option/>}/>
