@@ -5,10 +5,9 @@ const Post = (props) => {
     <div className={s.item}>
       <div>
         <img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/BMW_logo_%28gray%29.svg' />
-        {props.postname.message} {props.postname.age}
-
+        <div>{props.mesage}</div>
         <div>
-          <button>like</button>
+          <button>like {props.likeCounts}</button>
         </div>
       </div>
     </div>

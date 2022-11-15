@@ -8,10 +8,7 @@ import Profile from './components/Profile/Profile';
 import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 const App = () => {
-  const post = {
-    message: 'hello im prorider', age: 21
-  }
-
+ 
   return (
     <BrowserRouter>
       <div className='app-wraper'>
@@ -19,7 +16,7 @@ const App = () => {
         <NavBar />
         <div className='app-wraper-dialogs'>
           <Routes>
-            <Route path="/Profile" element={<Profile postname={post}/>} />
+            <Route path="/Profile" element={<Profile />} />
             <Route path="/Dialogs/*" element={<Dialogs />} />
             <Route path='/Music' element={<Music/>}/>
             <Route path='/Video' element={<Video/>}/>
