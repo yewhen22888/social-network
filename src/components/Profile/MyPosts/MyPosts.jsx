@@ -3,6 +3,7 @@ import s from './MyPosts.module.css'
 
 
 const Posts = (props) => {
+  let postselement =props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts}/>)  
   return (
     <div className={s.postBar}>
       <div>
@@ -13,7 +14,7 @@ const Posts = (props) => {
         <button>New Post</button>
       </div>
       <div className='posts'>
-      {props.postselement}
+      {postselement}
       </div>
     </div >
   )

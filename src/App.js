@@ -9,15 +9,9 @@ import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 import Post from './components/Profile/MyPosts/MyPost/MyPost';
 
-const App = () => {
-    let posts = [
-    { id: 1, message: "Hi im okay", likeCounts: '12' },
-    { id: 1, message: 'How old are you', likeCounts: '13' },
-    { id: 1, message: 'i love football', likeCounts: '7' },
-  ]
-  
-  let postselement = posts.map(el => <Post message={el.message} likeCounts={el.likeCounts}/>)
-  
+const App = (props) => {
+
+
   return (
     <BrowserRouter>
       <div className='app-wraper'>
@@ -25,8 +19,8 @@ const App = () => {
         <NavBar />
         <div className='app-wraper-dialogs'>
           <Routes>
-            <Route path="/Profile" element={() => <Profile posts={postselement} />} />
-            <Route path="/Dialogs/*" element={<Dialogs />} />
+            <Route path="/Profile" element={<Profile posts={props.posts} />} />
+            <Route path="/Dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages} />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Video' element={<Video />} />
             <Route path='/Option' element={<Option />} />
