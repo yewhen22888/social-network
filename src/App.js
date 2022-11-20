@@ -10,17 +10,15 @@ import Option from './components/Option/Option';
 import Post from './components/Profile/MyPosts/MyPost/MyPost';
 
 const App = (props) => {
-
-
-  return (
+    return (
     <BrowserRouter>
       <div className='app-wraper'>
         <Header />
         <NavBar />
         <div className='app-wraper-dialogs'>
           <Routes>
-            <Route path="/Profile" element={<Profile posts={props.posts} />} />
-            <Route path="/Dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages} />} />
+            <Route path="/Profile" element={<Profile posts={props.state.ProfilePage.posts} />} />
+            <Route path="/Dialogs/*" element={<Dialogs dialogs={props.state.DialogsPage.dialogs} messages={props.state.DialogsPage.messages} />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Video' element={<Video />} />
             <Route path='/Option' element={<Option />} />
