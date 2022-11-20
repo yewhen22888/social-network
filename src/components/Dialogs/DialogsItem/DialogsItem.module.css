@@ -1,0 +1,28 @@
+.dialog {
+    color: black;
+    text-decoration: none;
+}
+
+.dialog img {
+    width: 30px;
+    border-radius: 25px;
+}
+
+
+
+.NavLink {
+    color: black;
+    width: 40px;
+    text-decoration: none;
+}
+
+.dialog :hover {
+    color: rgb(255, 226, 60);
+    width: 35px;
+}
+
+.active {
+    width: 40px;
+    color: gold;
+    text-decoration: none;
+}
