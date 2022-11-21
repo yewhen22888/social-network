@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './State/state';
+import { addPost } from './State/state';
 
+// addPost('lollolo lo lo')
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App state= {state}/>
+    <App state= {state} addPost={addPost}/>
   </React.StrictMode>
 );
 

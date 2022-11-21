@@ -26,6 +26,14 @@ DialogsPage:{
   ]
 } 
 }
+export let addPost= (postMessage) => {
+  let newPost = {
+    message: postMessage ,
+    likeCounts: 0
+      };
+
+  state.ProfilePage.posts.push (newPost);
+}
   
 
 
