@@ -8,8 +8,8 @@ const Posts = (props) => {
   let RefaddPost = React.createRef();
 
   let addPost = () => {
-    let text = RefaddPost.current.value;
-    addPost(text)
+    let postMessage = RefaddPost.current.value;
+    addPost(postMessage)
   }
   return (
     <div className={s.postBar}>
