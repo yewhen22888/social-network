@@ -7,7 +7,6 @@ import NavBar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Video from './components/Video/Video';
 import Option from './components/Option/Option';
-import Post from './components/Profile/MyPosts/MyPost/MyPost';
 
 const App = (props) => {
     return (

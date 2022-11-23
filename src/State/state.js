@@ -1,5 +1,5 @@
-import Dialogs from "../components/Dialogs/Dialogs"
-
+import Dialogs from './../components/Dialogs/Dialogs'
+import reRenderAllTree from './../rerender'
 let state = {
  ProfilePage: {
     posts: [
@@ -32,7 +32,8 @@ export let addPost= (postMessage) => {
     likeCounts: 0
       };
 
-  state.ProfilePage.posts.push (newPost);
+  state.ProfilePage.posts.push (newPost)
+  reRenderAllTree(state);
 }
   
 
