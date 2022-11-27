@@ -10,6 +10,7 @@ const Posts = (props) => {
   let addPost = () => {
     let postMessage = RefaddPost.current.value;
     props.addPost(postMessage)
+    RefaddPost.current.value = ''
   }
   return (
     <div className={s.postBar}>
