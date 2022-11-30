@@ -7,17 +7,21 @@ const Posts = (props) => {
 
   let RefaddPost = React.createRef();
 
+  let onPostChange = () => {
+    let text = RefaddPost.current.value;
+    props.postChange(text)
+  }
+
   let addPost = () => {
-    let postMessage = RefaddPost.current.value;
-    props.addPost(postMessage)
-    RefaddPost.current.value = ''
+    props.addPost()
+
   }
   return (
     <div className={s.postBar}>
       <div>
         My post
       </div>
-      <textarea ref={RefaddPost}></textarea>
+      <textarea onChange={onPostChange} ref={RefaddPost}></textarea>
       <div>
         <button onClick={addPost}>New Post</button>
       </div>
