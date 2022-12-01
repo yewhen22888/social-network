@@ -14,7 +14,9 @@ const Posts = (props) => {
   };
 
   let addPost = () => {
+  
     props.addPost()
+    RefaddPost.current.value = ''
   };
 
   return (

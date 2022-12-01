@@ -34,8 +34,7 @@ export let addPost = () => {
   }
 
   state.ProfilePage.posts.push(newPost);
-  state.ProfilePage.newPostText = ''
-  reRenderAllTree(state);
+    reRenderAllTree(state);
 }
 
 export let postChange = (text) => {
