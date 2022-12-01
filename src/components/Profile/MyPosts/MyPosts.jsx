@@ -4,19 +4,19 @@ import React from 'react';
 
 const Posts = (props) => {
   
+  let postelement = props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)
 
   let RefaddPost = React.createRef();
 
   let onPostChange = () => {
     let text = RefaddPost.current.value;
-    props.postChange(text);
-  }
+    props.postChange(text)
+  };
 
   let addPost = () => {
-    props.addPost();
-  
-  }
-    console.log(props.posts.map);
+    props.addPost()
+  };
+
   return (
     <div className={s.postBar}>
       <div>
@@ -24,11 +24,10 @@ const Posts = (props) => {
       </div>
       <textarea onChange={onPostChange} ref={RefaddPost}></textarea>
       <div>
-        <button onClick={() =>addPost}>New Post</button>
+        <button onClick={addPost}>New Post</button>
       </div>
       <div className='posts'>
-        {props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)}
-        
+        {postelement}
       </div>
     </div >
   )
