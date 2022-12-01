@@ -4,7 +4,7 @@ import React from 'react';
 
 const Posts = (props) => {
   
-  let postelement = props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)
+  let postelement = props.profilePage.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)
 
   let RefaddPost = React.createRef();
 
@@ -24,7 +24,7 @@ const Posts = (props) => {
       <div>
         My post
       </div>
-      <textarea onChange={onPostChange} ref={RefaddPost}></textarea>
+      <textarea onChange={onPostChange} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
       <div>
         <button onClick={addPost}>New Post</button>
       </div>
