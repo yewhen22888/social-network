@@ -7,10 +7,8 @@ let state = {
     { message: 'How old are you', likeCounts: '13' },
     { message: 'i love football', likeCounts: '7' },
   ],
-  newPostText: [
-    'NewPost'
-  ]
-},
+  newPostText:'NewPost'
+  },
 DialogsPage:{ 
    dialogs: [
     { id: 1, name: 'Illy' },
@@ -33,7 +31,7 @@ export let addPost= () => {
   let newPost = {
     message: state.ProfilePage.newPostText,
     likeCounts: 0
-      };
+      }
 
   state.ProfilePage.posts.push (newPost)
   state.ProfilePage.newPostText = ('')
@@ -41,7 +39,7 @@ export let addPost= () => {
 }
 
 export let postChange= (text) => {
-state.ProfilePage.newPostText.push(text) 
+state.ProfilePage.newPostText = text   
 
 reRenderAllTree(state);
 }
