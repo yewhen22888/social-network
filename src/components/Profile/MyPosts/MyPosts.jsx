@@ -14,17 +14,19 @@ const Posts = (props) => {
   };
 
   let addPost = () => {
-  
-    props.addPost()
-    RefaddPost.current.value = ''
-  };
+        props.addPost()
+     };
 
+  let deleteArea = (props) => {
+    props.deleteArea()
+  }
+debugger
   return (
     <div className={s.postBar}>
       <div>
         My post
       </div>
-      <textarea onChange={onPostChange} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
+      <textarea onChange={onPostChange} onClick={deleteArea} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
       <div>
         <button onClick={addPost}>New Post</button>
       </div>

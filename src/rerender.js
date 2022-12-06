@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { addPost, postChange } from './State/state';
-
+import { addPost, postChange,deleteArea} from './State/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,6 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         state= {state} 
         addPost={addPost}
         postChange={postChange}
+        deleteArea={deleteArea}
         />
       </React.StrictMode>
     )

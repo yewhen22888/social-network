@@ -31,17 +31,24 @@ export let addPost = () => {
   let newPost = {
     message: state.ProfilePage.newPostText,
     likeCounts: 0
+ 
   }
 
   state.ProfilePage.posts.push(newPost);
+  state.ProfilePage.newPostText=' '
     reRenderAllTree(state);
 }
 
 export let postChange = (text) => {
-  state.ProfilePage.newPostText = text
+  state.ProfilePage.newPostText = text;
+  
 
   reRenderAllTree(state);
 }
+export let deleteArea = () => {
+  state.ProfilePage.newPostText = ' '
+  reRenderAllTree(state);
+} 
 
 
 
