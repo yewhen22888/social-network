@@ -10,7 +10,8 @@ const Profile = (props) => {
         <Posts
          profilePage={props.ProfilePage}
           addPost={props.addPost}
-          postChange={props.postChange}/>
+          postChange={props.postChange}
+          deleteArea={props.deleteArea}/>
       </div>
     </div>
   );

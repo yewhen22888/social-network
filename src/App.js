@@ -19,7 +19,8 @@ const App = (props) => {
             <Route path="/Profile" element={<Profile
              ProfilePage={props.state.ProfilePage}
              addPost={props.addPost}
-             postChange={props.postChange}/>} />
+             postChange={props.postChange}/>}
+             deleteArea={props.deleteArea} />
              
             <Route path="/Dialogs/*" element={<Dialogs dialogs={props.state.DialogsPage.dialogs} messages={props.state.DialogsPage.messages} />} />
             <Route path='/Music' element={<Music />} />
