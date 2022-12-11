@@ -1,5 +1,7 @@
-import Dialogs from './../components/Dialogs/Dialogs'
-import reRenderAllTree from './../rerender'
+let reRenderAllTree = () => {
+  subscribe()
+}
+
 let state = {
   ProfilePage: {
     posts: [
@@ -7,7 +9,7 @@ let state = {
       { message: 'How old are you', likeCounts: '13' },
       { message: 'i love football', likeCounts: '7' },
     ],
-    newPostText: 'YourText'
+    newPostText: ''
   },
   DialogsPage: {
     dialogs: [
@@ -27,28 +29,31 @@ let state = {
     ]
   }
 }
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     message: state.ProfilePage.newPostText,
     likeCounts: 0
- 
+
   }
 
   state.ProfilePage.posts.push(newPost);
-  state.ProfilePage.newPostText=' '
-    reRenderAllTree(state);
-}
-
-export let postChange = (text) => {
-  state.ProfilePage.newPostText = text;
-  
-
-  reRenderAllTree(state);
-}
-export let deleteArea = () => {
   state.ProfilePage.newPostText = ' '
   reRenderAllTree(state);
-} 
+}
+
+export const postChange = (text) => {
+  state.ProfilePage.newPostText = text;
+
+
+  reRenderAllTree(state);
+}
+export const deleteArea = () => {
+  state.ProfilePage.newPostText = ' '
+  reRenderAllTree(state);
+}
+export const subscribe = (observer) => {
+  reRenderAllTree = observer
+}
 
 
 

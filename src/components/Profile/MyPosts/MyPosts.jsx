@@ -3,7 +3,7 @@ import s from './MyPosts.module.css'
 import React from 'react';
 
 const Posts = (props) => {
-  
+
   let postelement = props.profilePage.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)
 
   let RefaddPost = React.createRef();
@@ -14,19 +14,19 @@ const Posts = (props) => {
   };
 
   let addPost = () => {
-        props.addPost()
-     };
+    props.addPost()
+  };
 
   let deleteArea = (props) => {
     props.deleteArea()
   }
-debugger
+  
   return (
     <div className={s.postBar}>
       <div>
         My post
       </div>
-      <textarea onChange={onPostChange} onClick={deleteArea} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
+      <textarea placeholder='YourText' onChange={onPostChange} onClick={deleteArea} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
       <div>
         <button onClick={addPost}>New Post</button>
       </div>
