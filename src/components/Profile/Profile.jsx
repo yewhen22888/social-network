@@ -1,5 +1,5 @@
 import Posts from './MyPosts/MyPosts';
-import s from './Profile.module.css';
+// import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
@@ -9,9 +9,8 @@ const Profile = (props) => {
          <div>
         <Posts
          profilePage={props.ProfilePage}
-          addPost={props.addPost}
-          postChange={props.postChange}
-          deleteArea={props.deleteArea}/>
+         dispatch={props.dispatch}
+         />
       </div>
     </div>
   );

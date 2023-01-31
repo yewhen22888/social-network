@@ -9,7 +9,7 @@ import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 
 const App = (props) => {
-    return (
+  return (
     <BrowserRouter>
       <div className='app-wraper'>
         <Header />
@@ -17,12 +17,11 @@ const App = (props) => {
         <div className='app-wraper-dialogs'>
           <Routes>
             <Route path="/Profile" element={<Profile
-             ProfilePage={props.state.ProfilePage}
-             addPost={props.addPost}
-             postChange={props.postChange}/>}
-             deleteArea={props.deleteArea} />
-             
-            <Route path="/Dialogs/*" element={<Dialogs dialogs={props.state.DialogsPage.dialogs} messages={props.state.DialogsPage.messages} />} />
+              ProfilePage={props.state.ProfilePage}
+              dispatch={props.dispatch}
+            />} />
+
+            <Route path="/Dialogs/*" element={<Dialogs DialogsPage={props.state.DialogsPage} dispatch={props.dispatch} />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Video' element={<Video />} />
             <Route path='/Option' element={<Option />} />

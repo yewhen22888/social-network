@@ -1,6 +1,8 @@
 import Post from './MyPost/MyPost';
 import s from './MyPosts.module.css'
 import React from 'react';
+import { onPostChangeActionCreator,addPostActionCreator} from '../../../State/state'
+
 
 const Posts = (props) => {
 
@@ -10,23 +12,20 @@ const Posts = (props) => {
 
   let onPostChange = () => {
     let text = RefaddPost.current.value;
-    props.postChange(text)
+    props.dispatch(onPostChangeActionCreator(text))
+
   };
 
   let addPost = () => {
-    props.addPost()
+    props.dispatch(addPostActionCreator())
   };
 
-  let deleteArea = (props) => {
-    props.deleteArea()
-  }
-  
-  return (
+   return (
     <div className={s.postBar}>
       <div>
         My post
       </div>
-      <textarea placeholder='YourText' onChange={onPostChange} onClick={deleteArea} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
+      <textarea placeholder='YourText' onChange={onPostChange} ref={RefaddPost} value={props.profilePage.newPostText}></textarea>
       <div>
         <button onClick={addPost}>New Post</button>
       </div>
