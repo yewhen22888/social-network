@@ -11,7 +11,7 @@ const DialogsPageReduser = (state, action) => {
             state.messages.push(newMessage)
             state.newMessageText = ' '
      return state
-    default: return state
+    default: return state 
 }}
 
 export const messageChangeCreator = (textMessage) => ({
