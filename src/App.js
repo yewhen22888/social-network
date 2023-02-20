@@ -9,9 +9,9 @@ import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 
 const App = (props) => {
-  return (
+    return (
     <BrowserRouter>
-      <div className='app-wraper'>
+          <div className='app-wraper'>
         <Header />
         <NavBar />
         <div className='app-wraper-dialogs'>
@@ -20,7 +20,6 @@ const App = (props) => {
               ProfilePage={props.state.ProfilePage}
               dispatch={props.dispatch}
             />} />
-
             <Route path="/Dialogs/*" element={<Dialogs DialogsPage={props.state.DialogsPage} dispatch={props.dispatch} />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Video' element={<Video />} />

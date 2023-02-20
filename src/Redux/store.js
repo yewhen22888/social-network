@@ -41,6 +41,7 @@ let Store = {
   dispatch(action) {
     this._state.ProfilePage = ProfilePageReduser(this._state.ProfilePage,action);
    this._state.DialogsPage = DialogsPageReduser(this._state.DialogsPage,action);
+   
     this.subscriber(this._state);
     
   }
