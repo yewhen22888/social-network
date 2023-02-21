@@ -8,17 +8,17 @@ import Profile from './components/Profile/Profile';
 import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 
+
 const App = (props) => {
-    return (
+  return (
     <BrowserRouter>
-          <div className='app-wraper'>
+      <div className='app-wraper'>
         <Header />
         <NavBar />
         <div className='app-wraper-dialogs'>
           <Routes>
             <Route path="/Profile" element={<Profile
-              ProfilePage={props.state.ProfilePage}
-              dispatch={props.dispatch}
+              store={props.store}
             />} />
             <Route path="/Dialogs/*" element={<Dialogs DialogsPage={props.state.DialogsPage} dispatch={props.dispatch} />} />
             <Route path='/Music' element={<Music />} />

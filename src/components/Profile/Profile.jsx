@@ -1,4 +1,4 @@
-import Posts from './MyPosts/MyPosts';
+import PostsContainer from './MyPosts/MyPostsContainer';
 // import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
@@ -7,10 +7,7 @@ const Profile = (props) => {
         <div className>
          <ProfileInfo/>
          <div>
-        <Posts
-         profilePage={props.ProfilePage}
-         dispatch={props.dispatch}
-         />
+        <PostsContainer store={props.store}/>
       </div>
     </div>
   );
