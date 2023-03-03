@@ -5,17 +5,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MyContext from './context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function reRenderAllTree(state) {
   root.render(
     <React.StrictMode>
-      <App
-        state={state}
-        dispatch={store.dispatch.bind(store)}
-        store={store}
-      />
+      <MyContext.Provider value={store} >
+        <App
+          store={store}
+        />
+      </MyContext.Provider>
     </React.StrictMode>
   )
 };

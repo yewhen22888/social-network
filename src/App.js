@@ -17,13 +17,13 @@ const App = (props) => {
         <NavBar />
         <div className='app-wraper-dialogs'>
           <Routes>
-            <Route path="/Profile" element={<Profile
-              store={props.store}
+            <Route path="/Profile"   element={<Profile
+              
             />} />
              <Route path="" element={<Profile
-              store={props.store}
+              
             />} />
-            <Route path="/Dialogs/*" element={<DialogsContainer state={props.state} dispatch={props.dispatch} />} />
+            <Route path="/Dialogs/*" element={<DialogsContainer store={props.store} />} />
             <Route path='/Music' element={<Music />} />
             <Route path='/Video' element={<Video />} />
             <Route path='/Option' element={<Option />} />
