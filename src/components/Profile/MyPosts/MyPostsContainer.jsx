@@ -11,12 +11,11 @@ const PostsContainer = (props) => {
   return (
     <MyContext.Consumer>
       {(store) => {
-        
+
         let state = store.getState()
 
         let onPostChange = (text) => {
           store.dispatch(onPostChangeActionCreator(text))
-
         };
 
         let addPost = () => {
