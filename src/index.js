@@ -5,18 +5,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MyContext from './context';
+import MyContext,{Provider} from './context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function reRenderAllTree(state) {
+  debugger
   root.render(
     <React.StrictMode>
-      <MyContext.Provider value={store} >
+      <Provider store={store} >
         <App
-          store={store}
-        />
-      </MyContext.Provider>
+        store={store}/>
+      </Provider>
     </React.StrictMode>
   )
 };
