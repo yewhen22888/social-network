@@ -5,17 +5,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MyContext,{Provider} from './context';
+import {Provider} from 'react-redux'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function reRenderAllTree(state) {
-  debugger
-  root.render(
+   root.render(
     <React.StrictMode>
       <Provider store={store} >
         <App
-        store={store}/>
+          store={store} />
       </Provider>
     </React.StrictMode>
   )
