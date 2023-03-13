@@ -15,18 +15,23 @@ let InitialState = {
 
 const ProfilePageReduser = (state = InitialState, action) => {
     switch (action.type) {
-        case AddPost:
+        case AddPost: {
             let newPost = {
                 message: state.newPostText,
                 likeCounts: 0
             }
 
-            state.posts.push(newPost);
-            state.newPostText = ''
-            return state
-        case PostChange:
-            state.newPostText = action.textt;
-            return state
+            let stateCopy = { ...state }
+            stateCopy.posts = { ...state.posts }
+            stateCopy.posts.push(newPost);
+            stateCopy.newPostText = ''
+            return stateCopy
+        }
+        case PostChange: {
+            let stateCopy = { ...state }        
+            stateCopy.newPostText = action.textt;
+            return stateCopy
+        }
         default:
             return state
     }
