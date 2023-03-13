@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
-    newPostText: state.newPostText,
+    newPostText: state.ProfilePage.newPostText, // state.ProfilePage.newPostText це правильно а ти написав state.newPostText тому тут було undefined
     posts: state.ProfilePage.posts
   }
 }
