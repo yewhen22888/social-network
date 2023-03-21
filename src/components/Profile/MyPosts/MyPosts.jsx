@@ -20,7 +20,7 @@ const Posts = (props) => {
     props.addPost()
   };
 
-   return (
+  return (
     <div className={s.postBar}>
       <div>
         My post
