@@ -13,19 +13,22 @@ let InitialState = {
 
 
 
-const ProfilePageReduser = (state = InitialState, action) => {
+const ProfilePageReducer = (state = InitialState, action) => {
     switch (action.type) {
         case AddPost: {
             let newPost = {
                 message: state.newPostText,
                 likeCounts: 0
             }
-            let stateCopy = { ...state, posts: { ...state.posts,newPost },newPostText:'' }
-            
+
+            let stateCopy = { ...state }
+            stateCopy.posts = { ...state.posts }
+            stateCopy.posts.push(newPost);
+            stateCopy.newPostText = ''
             return stateCopy
         }
         case PostChange: {
-            let stateCopy = { ...state }
+            let stateCopy = { ...state }        
             stateCopy.newPostText = action.textt;
             return stateCopy
         }
@@ -36,7 +39,7 @@ const ProfilePageReduser = (state = InitialState, action) => {
 
 export const onPostChangeActionCreator = (text) => {
     return {
-        type: PostChange, textt: text
+        type: PostChange, text: text
     }
 }
 
@@ -46,4 +49,4 @@ export const addPostActionCreator = () => {
     }
 }
 
-export default ProfilePageReduser;
+export default ProfilePageReducer;

@@ -17,24 +17,17 @@ let InitialState = {
     { id: 4, message: 'yo' },
     { id: 5, message: 'yo' },
   ],
-  newMessageText: ' '
+  newMessageText: ''
 }
 
-const DialogsPageReduser = (state = InitialState, action) => {
+const DialogsPageReducer = (state = InitialState, action) => {
   switch (action.type) {
     case MessageChange: {
-      let stateCopy = { ...state }
-      stateCopy.newMessageText = action.messageText
-      return stateCopy
+      return {...state, newMessageText: action.messageText}
     }
     case AddMessage: {
-      let stateCopy = { ...state }
-      stateCopy.messages = { ...state.message }
-
-      let newMessage = { id: 6, message: state.newMessageText }
-      stateCopy.messages.push(newMessage)
-      stateCopy.newMessageText = ' '
-      return stateCopy
+      let newMessage = { id: 6, message: state.newMessageText}// https://www.youtube.com/watch?v=I8LNJpG60vI&ab_channel=IT-KAMASUTRA як правильно робити
+      return {...state, messages: [newMessage, ...state.messages], newMessageText: ''}
     }
     default: return state
   }
@@ -49,4 +42,4 @@ export const AddMessageCreator = () => ({
 })
 
 
-export default DialogsPageReduser;
+export default DialogsPageReducer;
