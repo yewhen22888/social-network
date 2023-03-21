@@ -19,23 +19,6 @@ const Posts = (props) => {
         props.addPost()
     };
 
-<<<<<<< HEAD
-  return (
-    <div className={s.postBar}>
-      <div>
-        My post
-      </div>
-      <textarea placeholder='YourText' onChange={onPostChange} ref={RefaddPost} value={props.newPostText}></textarea>
-      <div>
-        <button onClick={addPost}>New Post</button>
-      </div>
-      <div className='posts'>
-        {postelement}
-      </div>
-    </div >
-  )
-=======
-
     return (
         <div className={s.postBar}>
             <div>
@@ -51,7 +34,7 @@ const Posts = (props) => {
             </div>
         </div>
     )
->>>>>>> f48d723ba3db62a0143a7084a8acc87adce37249
+
 }
 
 export default Posts;
