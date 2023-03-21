@@ -5,7 +5,7 @@ import React from 'react';
 
 const Posts = (props) => {
 
-    let postelement = props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts}/>)
+    let postelement = props.posts.map(el => <Post message={el.message} likeCounts={el.likeCounts} />)
 
     let RefaddPost = React.createRef();
 
@@ -25,7 +25,7 @@ const Posts = (props) => {
                 My post
             </div>
             <textarea placeholder='YourText' onChange={onPostChange} ref={RefaddPost}
-                      value={props.newPostText}></textarea>
+                value={props.newPostText !== undefined ? props.newPostText : 'yourValueUndefined'}></textarea>
             <div>
                 <button onClick={addPost}>New Post</button>
             </div>

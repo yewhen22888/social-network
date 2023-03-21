@@ -21,13 +21,11 @@ const ProfilePageReducer = (state = InitialState, action) => {
                 likeCounts: 0
             }
 
-
-            return { ...state, posts: { ...state.posts, newPost }, newPostText: '' }
+            return { ...state, posts: [...state.posts, newPost], newPostText: '' }
         }
         case PostChange: {
-            let stateCopy = { ...state }
-            stateCopy.newPostText = action.textt;
-            return stateCopy
+
+            return { ...state, newPostText: action.text }
         }
         default:
             return state
@@ -36,7 +34,7 @@ const ProfilePageReducer = (state = InitialState, action) => {
 
 export const onPostChangeActionCreator = (text) => {
     return {
-        type: PostChange, text: text
+        type: PostChange, text
     }
 }
 
