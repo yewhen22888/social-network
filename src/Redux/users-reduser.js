@@ -1,45 +1,49 @@
-const MessageChange = 'MESSAGE-CHANGE'
-const AddMessage = 'ADD-MESSAGE'
+const FOLLOW = 'FOLLOW'
+const UNFOLLOW = 'UNFOLLOW'
+const SET_USERS='SET_USERS'
 
 let InitialState = {
-  dialogs: [
-    { id: 1, name: 'Illy' },
-    { id: 2, name: 'Dimon' },
-    { id: 3, name: 'Evelyn' },
-    { id: 4, name: 'Nikol' },
-    { id: 5, name: 'Jewheniy' },
-  ],
+  Users:
+    [{ id: 1, follow: true, FullName: 'Dimon', status: 'I like Js', location: { contry: 'Belarus', city: 'Minsk' } },
+    { id: 2, follow: false, FullName: 'Maria', status: 'Cook im my life', location: { contry: 'Ukraine', city: 'Kiev' } },
+    { id: 3, follow: false, FullName: 'Illy', status: 'I am Boss', location: { contry: 'France', city: 'Paris' } },
+    { id: 4, follow: true, FullName: 'Vasja', status: 'Stutututu', location: { contry: 'Japan', city: 'Kawasaki' } }]
 
-  messages: [
-    { id: 1, message: 'hi' },
-    { id: 2, message: 'how are you' },
-    { id: 3, message: 'how old are you' },
-    { id: 4, message: 'yo' },
-    { id: 5, message: 'yo' },
-  ],
-  newMessageText: ''
 }
 
 const DialogsPageReducer = (state = InitialState, action) => {
   switch (action.type) {
-    case MessageChange: {
-      return {...state, newMessageText: action.messageText}
+    case FOLLOW: {
+      return {
+        ...state, Users:
+          state.Users.map(u => {
+            if (u.id === action.userId) {
+              return { ...u, follow: true }
+            }
+          })
+      }
     }
-    case AddMessage: {
-      let newMessage = { id: 6, message: state.newMessageText}// https://www.youtube.com/watch?v=I8LNJpG60vI&ab_channel=IT-KAMASUTRA як правильно робити
-      return {...state, messages: [newMessage, ...state.messages], newMessageText: ''}
+    case UNFOLLOW: {
+      return {
+        ...state, Users:
+          state.Users.map(u => {
+            if (u.id === action.userId) {
+              return { ...u, follow: false }
+            }
+          })
+      }
+    }
+    case SetUsers: {
+      return { ...state, Users: [state.Users, action.Users] }
     }
     default: return state
   }
 }
 
-export const messageChangeCreator = (textMessage) => ({
-  type: MessageChange, messageText: textMessage
-})
+export const FollowCreator = (userId) => ({ type: FOLLOW, userId })
 
-export const AddMessageCreator = () => ({
-  type: AddMessage
-})
+export const UnfollowCreator = (userId) => ({ type: UNFOLLOW, userId })
+export const SetUsers = (Users) => ({type:SET_USERS ,Users})
 
 
 export default DialogsPageReducer;
