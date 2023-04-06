@@ -8,7 +8,7 @@ import Profile from './components/Profile/Profile';
 import Video from './components/Video/Video';
 import Option from './components/Option/Option';
 import StartLogo from './components/startComponent/startComponent';
-import UsersPage from './components/Users/UsersPage';
+import UsersPageContainer from './components/Users/UsersContainer';
 
 
 
@@ -23,7 +23,7 @@ const App = (props) => {
                         <Route path="" element={<StartLogo
                         />} />
                         <Route path="/Profile" element={<Profile />} />
-                        <Route path="/UsersPage" element={<UsersPage />} />
+                        <Route path="/UsersPage" element={<UsersPageContainer />} />
                         <Route path="/Dialogs/*" element={<DialogsContainer />} />
                         <Route path='/Music' element={<Music />} />
                         <Route path='/Video' element={<Video />} />

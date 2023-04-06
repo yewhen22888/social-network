@@ -11,7 +11,7 @@ let InitialState = {
 
 }
 
-const DialogsPageReducer = (state = InitialState, action) => {
+const UsersPageReducer = (state = InitialState, action) => {
   switch (action.type) {
     case FOLLOW: {
       return {
@@ -33,17 +33,18 @@ const DialogsPageReducer = (state = InitialState, action) => {
           })
       }
     }
-    case SetUsers: {
+    case SET_USERS: {
       return { ...state, Users: [state.Users, action.Users] }
     }
     default: return state
   }
 }
 
-export const FollowCreator = (userId) => ({ type: FOLLOW, userId })
+export const FollowActionCreator = (userId) => ({ type: FOLLOW, userId })
 
-export const UnfollowCreator = (userId) => ({ type: UNFOLLOW, userId })
-export const SetUsers = (Users) => ({type:SET_USERS ,Users})
+export const UnfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId })
+
+export const SetUsersActionCreator = (Users) => ({type:SET_USERS ,Users})
 
 
-export default DialogsPageReducer;
+export default UsersPageReducer;
