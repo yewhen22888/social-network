@@ -1,4 +1,6 @@
 .users_wrapper img {
+    display: flex;
+    flex-direction: row;
     width: 100px;
     height: 60px;
     border-radius: 20px;
@@ -6,11 +8,11 @@
 }
 
 .users_wrapper button {
-    background-color:rgb(33, 124, 227);
+    background-color: rgb(33, 124, 227);
     width: 100px;
- 
+
 }
- 
+
 .Button {
     padding-left: 10px;
 }
