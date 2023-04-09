@@ -1,10 +1,19 @@
-.users_wrapper img {
+.Users_Main{
     display: flex;
-    flex-direction: row;
-    width: 100px;
-    height: 60px;
-    border-radius: 20px;
+    justify-content: center;
+}
+
+.users_wrapper{
+    border: 1px solid black;
     padding: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+}
+.users_wrapper img{
+    height: 60px;
+    width: 100px;
 }
 
 .users_wrapper button {
