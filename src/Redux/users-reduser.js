@@ -31,10 +31,7 @@ const UsersPageReducer = (state = InitialState, action) => {
       }
     }
     case SET_USERS: {
-      let Newstate =  { ...state, Users: [...state.Users, ...action.Users] }
-      debugger
-      console.log(state)
-      return Newstate
+      return {...state, Users: [...action.Users]}
     }
     default: return state
   }

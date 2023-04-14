@@ -1,22 +1,14 @@
 import React from "react";
 import s from './UsersPage.module.css'
-// import axios from 'axios'
-
-
+import axios from 'axios'
 
 
 const UsersPage = (props) => {
-
     if (props.Users.length === 0) {
-        //     axios.get("https://social-network.samuraijs.com/api/1.0/users")
-        //     .then(response => props.SetUsers(response.data.items))4
-        debugger
-        props.SetUsers(
-            [{ id: 1, img: "https://hips.hearstapps.com/hmg-prod/images/p90445339-lowres-1638019542.jpg", follow: true, name: 'Dimon', status: 'I like Js', location: { contry: 'Belarus', city: 'Minsk' } },
-            { id: 2, img: "https://pbs.twimg.com/media/ESUQ8JEU4AArz2x?format=jpg&name=small", follow: false, name: 'Maria', status: 'Cook im my life', location: { contry: 'Ukraine', city: 'Kiev' } },
-            { id: 3, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5RFoV2uCDKCvJxa08sQzUpCQUNDbwxeN31A&usqp=CAU", follow: false, name: 'Illy', status: 'I am Boss', location: { contry: 'France', city: 'Paris' } },
-            { id: 4, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEhms4bd2CScG9sIYWGavVT5wvoJ37Mv5XA&usqp=CAU", follow: true, name: 'Vasja', status: 'Stutututu', location: { contry: 'Japan', city: 'Kawasaki' } }]
-        )
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.SetUsers(response.data.items)
+            })
     }
     return <div>
         {
@@ -24,23 +16,29 @@ const UsersPage = (props) => {
                 return <div className={s.Users_Main} key={u.id}>
                     <div className={s.users_wrapper}>
                         <div className={s.ava}>
-                            <img src='https://hips.hearstapps.com/hmg-prod/images/p90445339-lowres-1638019542.jpg' />
+                            <img src='https://hips.hearstapps.com/hmg-prod/images/p90445339-lowres-1638019542.jpg'/>
                             <div>
-                                {u.follow ?
+                               {/* {u.follow ?
                                     <button onClick={() => {
                                         props.UnFollow(u.id)
                                     }}>UnFollow</button> :
                                     <button onClick={() => {
                                         props.Follow(u.id)
-                                    }}>Follow</button>}
+                                    }}>Follow</button>}*/}
+
+
 
                             </div>
                         </div>
                         <div className={s.text}>
-                            <div>{u.name}</div>
+                            {/*<div>{u.name}</div>
                             <div>{u.status}</div>
                             <div>{u.location.city}</div>
-                            <div>{u.location.contry}</div>
+                            <div>{u.location.contry}</div>*/}
+                            {/*
+                                  Таких свойств в масиві вже нема в response приходить інші обєкти
+                                  з різними свойствами і типами
+                                */}
 
                         </div>
                     </div>
