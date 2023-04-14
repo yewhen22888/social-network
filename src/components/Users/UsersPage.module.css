@@ -1,17 +1,19 @@
-.Users_Main{
+.Users_Main {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    padding: 7px;
+    padding-bottom: 3px;
 }
 
-.users_wrapper{
+.users_wrapper {
     border: 1px solid black;
     padding: 7px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 70%;
+
+    width: 90%;
 }
-.users_wrapper img{
+
+.users_wrapper img {
     height: 60px;
     width: 100px;
 }
@@ -22,6 +24,6 @@
 
 }
 
-.Button {
-    padding-left: 10px;
+.ava img {
+    border-radius: 10 px;
 }
