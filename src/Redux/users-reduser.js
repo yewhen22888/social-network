@@ -3,11 +3,11 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
 
 let InitialState = {
-  Users:[]
+  Users: []
 }
 
 const UsersPageReducer = (state = InitialState, action) => {
-   switch (action.type) {
+  switch (action.type) {
     case FOLLOW: {
       return {
         ...state, Users:
@@ -31,7 +31,7 @@ const UsersPageReducer = (state = InitialState, action) => {
       }
     }
     case SET_USERS: {
-      return {...state, Users: [...action.Users]}
+      return { ...state, Users: [... state.Users,...action.Users] }
     }
     default: return state
   }
