@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import UsersPage from "./UsersPage";
+import Users from "./UsersPage Class";
 import { FollowActionCreator, UnfollowActionCreator,SetUsersActionCreator } from './../../Redux/users-reduser'
 
 let mapStateToProps = (state) => {
@@ -22,6 +22,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const UsersPageContainer = connect(mapStateToProps, mapDispatchToProps)(UsersPage)
+const UsersPageContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
 
 export default UsersPageContainer

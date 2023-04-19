@@ -2,13 +2,13 @@ import React from "react";
 import s from './UsersPage.module.css'
 import axios from 'axios'
 
-let state = [
-    { id: 1, follow: true, name: 'victor', status: 'i love js', location: { city: 'uzhorod', contry: 'ukraine' } },
-    { id: 2, follow: true, name: 'maria', status: 'i banana', location: { city: 'wiena', contry: 'austria' } },
-    { id: 3, follow: false, name: 'andrew', status: 'stutututu', location: { city: 'krakow', contry: 'poland' } }
+// let state = [
+//     { id: 1, follow: true, name: 'victor', status: 'i love js', location: { city: 'uzhorod', contry: 'ukraine' } },
+//     { id: 2, follow: true, name: 'maria', status: 'i banana', location: { city: 'wiena', contry: 'austria' } },
+//     { id: 3, follow: false, name: 'andrew', status: 'stutututu', location: { city: 'krakow', contry: 'poland' } }
 
 
-]
+// ]
 
 const UsersPage = (props) => {
     let Setusers = () => {
@@ -20,8 +20,7 @@ const UsersPage = (props) => {
                 })
         }
     }
-    //     props.SetUsers(state)
-    // }
+  
     return <div>
         {props.Users.length == 0 ? <button onClick={Setusers}>tap me to get users</button> :null }
         {
