@@ -19,11 +19,26 @@ class Users extends React.Component {
             .then(response => {
                 this.props.SetUsers(response.data.items)
             })
-         } 
-    render() {
-        return <div>
+    }
 
+    render() {
+
+        let PagesCount = this.props.TotalCount / this.props.PageSize
+
+        let Page = []
+        {
+            for (let i = 1; i <= Math.ceil(PagesCount); i++) {
+                Page.push(i)
+            }
+        }
+
+
+        return <div>
+            <div>{Page.map(p => {
+                return <span className={s.SelectedPage}>{p}</span>
+            })}</div>
             {
+
                 this.props.Users.map(u => {
                     return <div className={s.Users_Main} key={u.id}>
                         <div className={s.users_wrapper}>

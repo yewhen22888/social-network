@@ -5,7 +5,10 @@ import { FollowActionCreator, UnfollowActionCreator,SetUsersActionCreator } from
 
 let mapStateToProps = (state) => {
     return {
-        Users: state.UsersPage .Users
+        Users: state.UsersPage .Users,
+        TotalCount:state.UsersPage.TotalCount,
+        PageSize:state.UsersPage.PageSize,
+        CurrentPage:state.UsersPage.CurrentPage
     }
 }
 let mapDispatchToProps = (dispatch) => {
