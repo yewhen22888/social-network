@@ -19,7 +19,7 @@ class Users extends React.Component {
             .then(response => {
                 this.props.SetUsers(response.data.items)
             })
-         }
+         } 
     render() {
         return <div>
 
