@@ -15,10 +15,22 @@ class Users extends React.Component {
 
 
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.CurrentPage}&count=${this.props.PageSize}`)
             .then(response => {
                 this.props.SetUsers(response.data.items)
+                this.props.SetTotalCount(response.data.totalCount)
+                console.log(response)
             })
+    }
+
+    onClickChanged = (CurrentPage) => {
+        this.props.SetCurrentPage(CurrentPage)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${CurrentPage}&count=${this.props.PageSize}`)
+        .then(response => {
+            this.props.SetUsers(response.data.items)
+            // this.props.SetTotalCount(response.data.totalCount)
+            console.log(response)
+        })
     }
 
     render() {
@@ -31,11 +43,10 @@ class Users extends React.Component {
                 Page.push(i)
             }
         }
-
-
         return <div>
             <div>{Page.map(p => {
-                return <span className={s.SelectedPage}>{p}</span>
+
+                return <span onClick={() => { this.onClickChanged(p) }} className={p == this.props.CurrentPage ? s.SelectedPage : ''}> {p}</span>
             })}</div>
             {
 
@@ -43,7 +54,7 @@ class Users extends React.Component {
                     return <div className={s.Users_Main} key={u.id}>
                         <div className={s.users_wrapper}>
                             <div className={s.ava}>
-                                <img src='https://hips.hearstapps.com/hmg-prod/images/p90445339-lowres-1638019542.jpg' />
+                                <img src={u.photos.small || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROzMg1E0cnJn1r_ejy1QDiTo8iZboPPWGDDA&usqp=CAU'} />
                                 <div>
                                     {u.follow ?
                                         <button onClick={() => {
