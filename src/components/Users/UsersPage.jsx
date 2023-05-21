@@ -11,18 +11,18 @@ import axios from 'axios'
 // ]
 
 const UsersPage = (props) => {
-    let Setusers = () => {
-        if (props.Users.length === 0) {
-            axios.get("https://social-network.samuraijs.com/api/1.0/users")
-                .then(response => {
-                    props.SetUsers(response.data.items)
-                    console.log(response)
-                })
-        }
-    }
+    // let Setusers = () => {
+    //     if (props.Users.length === 0) {
+    //         axios.get("https://social-network.samuraijs.com/api/1.0/users")
+    //             .then(response => {
+    //                 props.SetUsers(response.data.items)
+    //                 console.log(response)
+    //             })
+    //     }
+    // }
   
     return <div>
-        {props.Users.length == 0 ? <button onClick={Setusers}>tap me to get users</button> :null }
+        {/* {props.Users.length == 0 ? <button onClick={Setusers}>tap me to get users</button> :null } */}
         {
             props.Users.map(u => {
                 return <div className={s.Users_Main} key={u.id}>
