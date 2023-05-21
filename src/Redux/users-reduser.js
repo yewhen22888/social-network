@@ -49,24 +49,24 @@ const UsersPageReducer = (state = InitialState, action) => {
       return { ...state, CurrentPage: action.CurrentPage }
     }
     case TOGGLE_IS_FETCHING: {
-    
+
       return { ...state, isFetching: action.isFetching }
     }
     default: return state
   }
 }
 
-export const FollowActionCreator = (userId) => ({ type: FOLLOW, userId })
+export const Follow = (userId) => ({ type: FOLLOW, userId })
 
-export const UnfollowActionCreator = (userId) => ({ type: UNFOLLOW, userId })
+export const Unfollow = (userId) => ({ type: UNFOLLOW, userId })
 
-export const SetUsersActionCreator = (Users) => ({ type: SET_USERS, Users })
+export const SetUsers = (Users) => ({ type: SET_USERS, Users })
 
 export const SetTotalCount = (count) => ({ type: SET_TOTAL_COUNT, count })
 
 export const SetCurrentPage = (CurrentPage) => ({ type: SET_CURRENT_PAGE, CurrentPage })
 
-export const ToggleIsFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
+export const ToggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
 
 export default UsersPageReducer;
