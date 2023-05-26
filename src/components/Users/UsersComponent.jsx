@@ -1,4 +1,5 @@
 
+import { NavLink } from 'react-router-dom'
 import s from './UsersPage.module.css'
 
 
@@ -25,7 +26,9 @@ return <div>
             return <div className={s.Users_Main} key={u.id}>
                 <div className={s.users_wrapper}>
                     <div className={s.ava}>
+                       <NavLink to={'/Profile/'+u.id}>  
                         <img src={u.photos.small || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROzMg1E0cnJn1r_ejy1QDiTo8iZboPPWGDDA&usqp=CAU'} />
+                        </NavLink>
                         <div>
                             {u.follow ?
                                 <button onClick={() => {
