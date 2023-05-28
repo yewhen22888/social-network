@@ -1,7 +1,7 @@
 
 const POST_CHANGE = 'POST_CHANGE'
 const ADD_POST = 'ADD_POST'
-const SET_USERS = 'SET_USERS'
+const SET_USERS_PROFILE = 'SET_USERS_PROFILE'
 
 let InitialState = {
     posts: [
@@ -10,7 +10,7 @@ let InitialState = {
         { message: 'i love football', likeCounts: '7' },
     ],
     newPostText: '',
-    data: null
+    userProfile: null
 }
 
 
@@ -26,18 +26,17 @@ const ProfilePageReducer = (state = InitialState, action) => {
             return { ...state, posts: [...state.posts, newPost], newPostText: '' }
         }
         case POST_CHANGE: {
-
             return { ...state, newPostText: action.text }
         }
-        case SET_USERS: {
-            let stateCopy ={...state, data: {...action.data}}
-            console.log(stateCopy)
-            return { stateCopy }
+        case SET_USERS_PROFILE: {
+           debugger
+            return {...state, userProfile: {...action.profile}}
         }
         default:
             return state
     }
 }
+
 
 export const onPostChangeActionCreator = (text) => {
     return {
@@ -47,8 +46,8 @@ export const onPostChangeActionCreator = (text) => {
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
 
+export const setUserProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
 
-export const SetUsersProfile = (data) => ({ type: SET_USERS, data })
 
 
 export default ProfilePageReducer;
