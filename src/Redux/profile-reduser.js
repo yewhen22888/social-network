@@ -29,8 +29,7 @@ const ProfilePageReducer = (state = InitialState, action) => {
             return { ...state, newPostText: action.text }
         }
         case SET_USERS_PROFILE: {
-           debugger
-            return {...state, userProfile: {...action.profile}}
+            return { ...state, userProfile: { ...action.profile } }
         }
         default:
             return state
@@ -46,7 +45,7 @@ export const onPostChangeActionCreator = (text) => {
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
 
-export const setUserProfile = (profile) => ({type: SET_USERS_PROFILE, profile})
+export const setUserProfile = (profile) => ({ type: SET_USERS_PROFILE, profile })
 
 
 
